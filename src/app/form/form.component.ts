@@ -9,9 +9,29 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  form: Post
+  form: FormGroup;
 
-  constructor() { }
+  constructor() {
+    this.form = new FormGroup({
+      title: new FormControl('', [
+        Validators.required
+      ]),
+      text: new FormControl('', [
+        Validators.required,
+        Validators.minLength(120),
+      ]),
+      author: new FormControl('', [
+        Validators.required
+      ]),
+      image: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^((http:\/\/www\.)|(www\.)|(http:\/\/))[a-zA-Z0-9._-]+\.[a-zA-Z.]{2,5}$/)
+      ]),
+      category: new FormControl('', [
+        Validators.required
+      ]),
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -4,13 +4,16 @@
         <label>Title</label>
         <input type="text" class="form-control" formControlName="title">
     </div>
+
     <div class="form-group">
         <label>Text</label>
-        <input type="text" class="form-control text" formControlName="text">
-
+        <div class="text">
+            <input type="textarea" class="form-control text" formControlName="text" #text maxlength="700">
+            <p>{{text.value.length}}/700</p>
+        </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-5">
         <label>Author</label>
         <input type="text" class="form-control" formControlName="author">
 
@@ -18,12 +21,7 @@
 
     <div class="form-group">
         <label>Image</label>
-        <input type="text" class="form-control" formControlName="img" placeholder="http//:www.imagelink.com">
-    </div>
-
-    <div class="form-group">
-        <label>Date</label>
-        <input type="text" class="form-control" formControlName="date" placeholder="dd/mm/yyyy">
+        <input type="text" class="form-control" formControlName="img" placeholder="Image url">
     </div>
 
     <div class="form-group">
@@ -32,10 +30,13 @@
             <option value=""></option>
             <option value="humor">Humor</option>
             <option value="news">News</option>
+            <option value="oldtimes">Old times</option>
+            <option value="movies">Movies</option>
+            <option value="Travel">Travel</option>
         </select>
 
     </div>
 
-    <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark">
+    <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark mt-5">
 
 </form>

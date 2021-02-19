@@ -1,1 +1,41 @@
-<p>form works!</p>
+<form [formGroup]="form">
+
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+    <div class="form-group">
+        <label>Text</label>
+        <input type="text" class="form-control text" formControlName="text">
+
+    </div>
+
+    <div class="form-group">
+        <label>Author</label>
+        <input type="text" class="form-control" formControlName="author">
+
+    </div>
+
+    <div class="form-group">
+        <label>Image</label>
+        <input type="text" class="form-control" formControlName="img" placeholder="http//:www.imagelink.com">
+    </div>
+
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control" formControlName="date" placeholder="dd/mm/yyyy">
+    </div>
+
+    <div class="form-group">
+        <label>Category</label>
+        <select class="ml-2">
+            <option value=""></option>
+            <option value="humor">Humor</option>
+            <option value="news">News</option>
+        </select>
+
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark">
+
+</form>

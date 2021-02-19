@@ -1,0 +1,12 @@
+form{
+    width: 60%;
+    margin: 0 20%;
+}
+
+.text{
+    height: 10em;
+}
+
+select{
+    border-radius: 15%;
+}

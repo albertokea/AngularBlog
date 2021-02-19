@@ -14,5 +14,9 @@ export interface Post {
 })
 export class PostService {
 
+  posts: Post[]
+
   constructor() { }
+
+
 }

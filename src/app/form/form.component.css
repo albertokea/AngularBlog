@@ -19,3 +19,11 @@ div .text p{
 select{
     border-radius: 12%;
 }
+
+input.ng-invalid.ng-touched{
+    border-color: tomato;
+}
+
+.error{
+    color: tomato;
+}

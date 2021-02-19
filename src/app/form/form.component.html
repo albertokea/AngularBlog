@@ -3,6 +3,7 @@
     <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" formControlName="title">
+        <p class="error" *ngIf="checkValidator('title', 'required')">You must set a title</p>
     </div>
 
     <div class="form-group">
@@ -11,17 +12,19 @@
             <input type="textarea" class="form-control text" formControlName="text" #text maxlength="700">
             <p>{{text.value.length}} / 700</p>
         </div>
+        <p class="error" *ngIf="checkValidator('text', 'minlenght')">Your text must be at least 120 characters</p>
     </div>
 
     <div class="form-group mt-5">
         <label>Author</label>
         <input type="text" class="form-control" formControlName="author">
-
+        <p class="error" *ngIf="checkValidator('title', 'required')">You must set a name or pseudonym</p>
     </div>
 
     <div class="form-group">
         <label>Image</label>
         <input type="text" class="form-control" formControlName="img" placeholder="Image url">
+        <p class="error" *ngIf="checkValidator('title', 'pattern')">Invalid url</p>
     </div>
 
     <div class="form-group">
@@ -34,7 +37,6 @@
             <option value="movies">Movies</option>
             <option value="Travel">Travel</option>
         </select>
-
     </div>
 
     <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark mt-5">

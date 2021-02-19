@@ -36,4 +36,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checkValidator(controlName, validatorName) {
+    this.form.get(controlName).hasError(validatorName) && this.form.get(controlName).touched;
+  }
 }

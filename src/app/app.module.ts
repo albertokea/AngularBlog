@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { FormComponent } from './form/form.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponent,
-    FormComponent
+    FormComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<div class="borderblack" *ngFor="let post of posts">
+<div class="borderblack mt-3" *ngFor="let post of posts">
     <div class="ml-3">
         <div>
             <figure class="borderblack mt-2">
@@ -8,8 +8,8 @@
         </div>
         <h3>{{post.title}}</h3>
         <p maxlength="50">{{post.text}}</p>
-        <div>
-            <p class="borderblack ml-2">#{{post.category}}</p>
-            <p class="ml-3">{{post.date |date: 'dd/mm/yyyy'}}</p>
+        <div class="footer">
+            <p class="borderblack ml-2 category">#{{post.category}}</p>
+            <p class="mr-3 date">{{post.date |date: 'dd/mm/yyyy hh:mm.ss'}}</p>
         </div>
     </div>

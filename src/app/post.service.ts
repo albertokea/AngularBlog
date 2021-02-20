@@ -34,7 +34,7 @@ export class PostService {
   }
 
   addPost(post) {
-    return this.posts.push(post)
+    return this.posts.unshift(post)
   }
 
   getPostbyCategory(category) {

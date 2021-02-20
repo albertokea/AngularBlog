@@ -16,4 +16,8 @@ export class BlogComponent implements OnInit {
     this.posts = await this.postService.getAll()
   }
 
+  async filter(event) {
+    await (event.target.value == 'none') ? this.postService.getAll() : this.posts = this.postService.getPostbyCategory(event.target.value);
+  }
+
 }

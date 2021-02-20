@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
       author: new FormControl('', [
         Validators.required
       ]),
-      image: new FormControl('', [
+      img: new FormControl('', [
         Validators.required,
         Validators.pattern(/^((http:\/\/www\.)|(www\.)|(http:\/\/))[a-zA-Z0-9._-]+\.[a-zA-Z.]{2,5}$/)
       ]),

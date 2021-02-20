@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-form',
@@ -10,7 +11,7 @@ export class FormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() {
+  constructor(private postsService: PostService) {
     this.form = new FormGroup({
       title: new FormControl('', [
         Validators.required
@@ -24,7 +25,7 @@ export class FormComponent implements OnInit {
       ]),
       img: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^((http:\/\/www\.)|(www\.)|(http:\/\/))[a-zA-Z0-9._-]+\.[a-zA-Z.]{2,5}$/)
+        Validators.pattern(/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/)
       ]),
       category: new FormControl('', [
         Validators.required
@@ -37,5 +38,9 @@ export class FormComponent implements OnInit {
 
   checkValidator(controlName, validatorName) {
     this.form.get(controlName).hasError(validatorName) && this.form.get(controlName).touched;
+  }
+
+  async newPost() {
+    await this.postsService.addPost(this.form.value)
   }
 }

@@ -1,0 +1,13 @@
+.borderblack{
+    border: 1px solid #0018;
+    border-radius: 10px;
+}
+
+img{
+    width: 5em;;
+}
+
+div div div{
+    display: flex;
+    align-items: center;
+}

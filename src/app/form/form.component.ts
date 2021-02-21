@@ -43,5 +43,6 @@ export class FormComponent implements OnInit {
   async newPost() {
     this.form.value.date = new Date;
     await this.postsService.addPost(this.form.value)
+    alert('Post submitted succesfully')
   }
 }

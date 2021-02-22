@@ -1,7 +1,7 @@
 <div>
     <h5>Filter by category:</h5>
     <select class="mb-3" (change)="filter($event)">
-        <option value="none"></option>
+        <option value=""></option>
         <option value="humor">Humor</option>
         <option value="news">News</option>
         <option value="oldtimes">Old times</option>
@@ -21,7 +21,7 @@
         <h3>{{post.title}}</h3>
         <p maxlength="50">{{post.text}}</p>
         <div class="footer">
-            <p class="borderblack ml-2 category">#{{post.category}}</p>
-            <p class="mr-3 date">{{post.date |date: 'dd/mm/yyyy hh:mm.ss'}}</p>
+            <p class="borderblack ml-2 category" (click)="onClickFilter(post.category)">#{{post.category}}</p>
+            <p class="mr-3 date">{{post.date |date: 'dd/MM/yyyy hh:mm'}}</p>
         </div>
     </div>

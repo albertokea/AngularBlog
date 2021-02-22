@@ -23,7 +23,7 @@ export class FormComponent implements OnInit {
       author: new FormControl('', [
         Validators.required
       ]),
-      img: new FormControl('', [
+      image: new FormControl('', [
         Validators.required,
         Validators.pattern(/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/)
       ]),
@@ -37,7 +37,7 @@ export class FormComponent implements OnInit {
   }
 
   checkValidator(controlName, validatorName) {
-    this.form.get(controlName).hasError(validatorName) && this.form.get(controlName).touched;
+    return this.form.get(controlName).hasError(validatorName) && this.form.get(controlName).touched;
   }
 
   async newPost() {

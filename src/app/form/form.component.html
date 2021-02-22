@@ -9,27 +9,30 @@
     <div class="form-group">
         <label>Text</label>
         <div class="text">
-            <input type="textarea" class="form-control text" formControlName="text" #text maxlength="700">
+            <textarea class="form-control text" formControlName="text" #text maxlength="700">
+            </textarea>
             <p>{{text.value.length}} / 700</p>
         </div>
-        <p class="error" *ngIf="checkValidator('text', 'minlenght')">Your text must be at least 120 characters</p>
+        <p class="error" *ngIf="checkValidator('text', 'minlength')">
+            Your text must be at least 120 characters</p>
     </div>
 
     <div class="form-group mt-5">
         <label>Author</label>
         <input type="text" class="form-control" formControlName="author">
-        <p class="error" *ngIf="checkValidator('title', 'required')">You must set a name or pseudonym</p>
+        <p class="error" *ngIf="checkValidator('author', 'required')">You must set
+            a name or pseudonym</p>
     </div>
 
     <div class="form-group">
         <label>Image</label>
-        <input type="text" class="form-control" formControlName="img" placeholder="Image url">
-        <p class="error" *ngIf="checkValidator('title', 'pattern')">Invalid url</p>
+        <input type="text" class="form-control" formControlName="image" placeholder="Image url">
+        <p class="error" *ngIf="checkValidator('image', 'pattern')">Invalid url</p>
     </div>
 
     <div class="form-group">
         <label>Category</label>
-        <select class="ml-2">
+        <select class="ml-2" formControlName="category">
             <option value=""></option>
             <option value="humor">Humor</option>
             <option value="news">News</option>

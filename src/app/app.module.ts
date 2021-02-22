@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { FormComponent } from './form/form.component';
 import { Error404Component } from './error404/error404.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
